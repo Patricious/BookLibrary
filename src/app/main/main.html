@@ -1,0 +1,58 @@
+
+  <md-content>
+    <header>
+      <acme-navbar creation-date="main.creationDate"></acme-navbar>
+    </header>
+
+    <!--<section class="jumbotron">-->
+
+      <!--<div class="container">-->
+        <!--<div class="row">-->
+          <!--<h3>Book Shelf</h3>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-3">
+            <form action="" class="search-form">
+              <div class="form-group has-feedback">
+                <!--<label for="search" class="sr-only">Search</label>-->
+                <md-input-container style="margin-top: 80px">
+                  <input type="text" ng-model="vm.isbn" class="form-control" id="search" placeholder="search">
+                  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                </md-input-container>
+                <md-button ng-click="vm.filterByISBN()" class="md-primary md-shadow-bottom-z-2 flow-btn" ng-style="{color:'#FFFFFF', 'background-color':'rgb(63,81,181)', 'border-radius':'0.7em', width:'30px', height:'25px', 'margin-left': '7em'}">Search</md-button>
+                <md-button ng-click="vm.filterByDetails()" class="md-primary md-shadow-bottom-z-2 flow-btn" ng-style="{color:'#FFFFFF', 'background-color':'rgb(63,81,181)', 'border-radius':'0.7em', width:'30px', height:'25px', 'margin-left': '7em'}">View All</md-button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-striped" style="padding:0 56px 0 0; margin: 10px">
+        <thead>
+        <tr>
+          <th ng-repeat="column in vm.data.columns" style="font-weight: 100!important; padding:0 56px 0 0"><span>{{column.title}}</span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="book in vm.Books" style="font-weight: 100!important;">
+          <th><span>{{book.ISBN}}</span></th>
+          <th><span>{{book.Format}}</span></th>
+          <th><span>{{book.Title}}</span></th>
+          <th><span>{{book.Subtitle}}</span></th>
+          <th><span>{{book.Description}}</span></th>
+          <th><span>{{book.Contributors}}</span></th>
+          <th><span>{{book.Language}}</span></th>
+          <th><span>{{book.PublicationDate| date:"yyyy/MM/dd HH:mm:ss"}}</span></th>
+          <th><md-button ng-click="vm.showAdvanced($event, book)" class="md-primary md-shadow-bottom-z-2 flow-btn" ng-style="{color:'#FFFFFF', 'background-color':'rgb(63, 81, 181)', 'border-radius':'0.7em', width:'30px', height:'25px', 'margin-left': '7em'}"">Edit</md-button></th>
+          <th><md-button ng-click="vm.deleteBook(book)" class="md-primary md-shadow-bottom-z-2 flow-btn" ng-style="{color:'#FFFFFF', 'background-color':'rgb(63, 81, 181)', 'border-radius':'0.7em', width:'30px', height:'25px', 'margin-left': '7em'}">Delete</md-button></th>
+        </tr>
+        </tbody>
+      </table>
+
+    </section>
+  </md-content>
+
+  <md-table-pagination md-limit="vm.data.query.limit" md-limit-options="[5, 10, 15]" md-page="vm.data.query.page" md-total="{{vm.data.count}}" md-page-select="" md-on-paginate=""></md-table-pagination>

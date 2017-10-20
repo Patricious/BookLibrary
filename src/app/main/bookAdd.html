@@ -1,0 +1,66 @@
+<md-dialog aria-label="Add Book">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add Book</h2>
+        <md-button class="md-icon-button" ng-click="vm.cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" ng-click="vm.AddBook()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div>
+        <md-input-container >
+          <label>ISBN</label>
+          <input type="text"  ng-model="vm.book.ISBN"/>
+        </md-input-container>
+        <br/>
+        <md-input-container >
+          <label>Fomart</label>
+          <input type="text"  ng-model="vm.book.Fomart"/>
+        </md-input-container>
+        <br/>
+        <md-input-container >
+          <label>Title</label>
+          <input type="text"  ng-model="vm.book.Title" />
+        </md-input-container>
+        <br/>
+        <md-input-container >
+          <label>Sub Title</label>
+          <input type="text"  ng-model="vm.book.Subtitle" />
+        </md-input-container>
+        <br/>
+        <md-input-container >
+          <label>Description</label>
+          <input type="text" ng-model="vm.book.Description" />
+        </md-input-container>
+        <br/>
+        <md-input-container >
+          <label>Contributors</label>
+          <input type="text"  ng-model="vm.book.Contributors" />
+        </md-input-container>
+        <br/>
+        <md-input-container >
+          <label>Language</label>
+          <input type="text"  ng-model="vm.book.Language" />
+        </md-input-container>
+        <md-input-container >
+          <label>Publication Date</label>
+          <input type="date"  ng-model="vm.book.PublicationDate" />
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="vm.cancel()">
+        Close
+      </md-button>
+      <md-button ng-click="vm.AddBook()">
+        Save
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

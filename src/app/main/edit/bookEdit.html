@@ -1,0 +1,58 @@
+
+<md-dialog aria-label="Edit vm.book {{vm.book.ISBN}}">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Edit {{vm.book.ISBN}}</h2>
+        <md-button class="md-icon-button" ng-click="vm.cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" ng-click="vm.Editvm.book()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div>
+        <md-input-container >
+          <label>Fomart</label>
+          <input type="text" ng-model="vm.book.Format"/>
+        </md-input-container>
+        <br/>
+        <md-input-container >
+          <label>Title</label>
+          <input type="text" ng-model="vm.book.Title" />
+        </md-input-container>
+        <br/>
+        <md-input-container >
+          <label>Sub Title</label>
+          <input type="text" ng-model="vm.book.Subtitle" />
+        </md-input-container>
+        <br/>
+        <md-input-container >
+          <label>Description</label>
+          <input type="text" ng-model="vm.book.Description" />
+        </md-input-container>
+        <br/>
+        <md-input-container >
+          <label>Contributors</label>
+          <input type="text" ng-model="vm.book.Contributors" />
+        </md-input-container>
+        <br/>
+        <md-input-container >
+          <label>Language</label>
+          <input type="text" ng-model="vm.book.Language" />
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="vm.cancel()">
+        Close
+      </md-button>
+      <md-button ng-click="vm.EditBook()">
+        Save
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
